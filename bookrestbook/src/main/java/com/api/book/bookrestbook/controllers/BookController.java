@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.expression.spel.ast.OperatorInstanceof;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +19,13 @@ public class BookController {
         return "This is testing book first from PostMan, using @RequestMapping(value = \"/books\", method = RequestMethod.GET) Annotation";
     }
 
-    @GetMapping("/books2")
-    public Book getBooks2() {
-        Book book = new Book(12323, "Core Java", "Durgesh");
-        // return "This is testing book first from PostMan, using
-        // @GetMapping(\"/books\") Annotation";
-        return book;
-    }
+    // @GetMapping("/books2")
+    // public Book getBooks2() {
+    // // Book book = new Book(12323, "Core Java", "Durgesh");
+    // // return "This is testing book first from PostMan, using
+    // // @GetMapping(\"/books\") Annotation";
+    // return book;
+    // }
 
     @Autowired
     private BookService bookService;
@@ -44,7 +43,7 @@ public class BookController {
         if (list.size() <= 0) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         } else {
-            return ResponseEntity.of(Optional.of(list));
+            return ResponseEntity.status(HttpStatus.CREATED).body(list);
         }
     }
 
