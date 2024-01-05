@@ -1,0 +1,14 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Spring Boot-BookrestbookApplication<bookrestbook>",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"mainClass": "com.api.book.bookrestbook.BookrestbookApplication",
+			"projectName": "bookrestbook",
+			"args": "",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}
